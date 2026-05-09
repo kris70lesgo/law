@@ -8,37 +8,27 @@ export default function LoadingScreen() {
   const [isLeaving, setIsLeaving] = useState(false);
 
   useEffect(() => {
-    const startedAt = Date.now();
-    const minimumDuration = 4200;
-    let removeOverlay: number;
+    let fallbackTimer: number;
+    let removeTimer: number;
 
     document.body.style.overflow = "hidden";
     void videoRef.current?.play();
 
-    const finishLoading = () => {
-      const elapsed = Date.now() - startedAt;
-      const remaining = Math.max(minimumDuration - elapsed, 0);
+    const removeLoader = () => {
+      setIsLeaving(true);
 
-      removeOverlay = window.setTimeout(() => {
-        setIsLeaving(true);
-
-        window.setTimeout(() => {
-          document.body.style.overflow = "";
-          setIsVisible(false);
-        }, 500);
-      }, remaining);
+      removeTimer = window.setTimeout(() => {
+        document.body.style.overflow = "";
+        setIsVisible(false);
+      }, 500);
     };
 
-    if (document.readyState === "complete") {
-      finishLoading();
-    } else {
-      window.addEventListener("load", finishLoading, { once: true });
-    }
+    fallbackTimer = window.setTimeout(removeLoader, 2500);
 
     return () => {
       document.body.style.overflow = "";
-      window.removeEventListener("load", finishLoading);
-      window.clearTimeout(removeOverlay);
+      window.clearTimeout(fallbackTimer);
+      window.clearTimeout(removeTimer);
     };
   }, []);
 
@@ -61,11 +51,18 @@ export default function LoadingScreen() {
         autoPlay
         muted
         playsInline
-        loop
         preload="auto"
         onLoadedData={(event) => {
           event.currentTarget.currentTime = 0;
           void event.currentTarget.play();
+        }}
+        onEnded={() => {
+          setIsLeaving(true);
+
+          window.setTimeout(() => {
+            document.body.style.overflow = "";
+            setIsVisible(false);
+          }, 500);
         }}
       />
     </div>
