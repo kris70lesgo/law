@@ -1,5 +1,4 @@
 import React from "react";
-import LoadingScreen from "./components/LoadingScreen";
 import {
   Phone,
   Mail,
@@ -16,64 +15,67 @@ import {
 
 export default function LawFirmPage() {
   return (
-    <div className="min-h-screen bg-white font-inter text-[#1E293B]">
-      <LoadingScreen />
+    <div className="min-h-screen bg-white text-[#1E293B]">
       <Header />
       <Hero />
       <About />
-      <LawAreas />
       <WhyChoose />
       <SuccessStories />
       <ConsultationForm />
+      <MapSection />
       <Footer />
     </div>
   );
 }
 
-function Header() {
+export function Header() {
   return (
     <header
-      className="fixed top-0 left-0 right-0 z-50 border-b border-white/10"
+      className="fixed top-0 left-0 right-0 z-50 border-b border-slate-200"
       style={{
-        background: "rgba(10, 15, 30, 0.45)",
+        background: "#003366",
         backdropFilter: "blur(24px)",
         WebkitBackdropFilter: "blur(24px)",
-        boxShadow: "0 4px 32px 0 rgba(0,0,30,0.25)",
+        boxShadow: "0 4px 28px 0 rgba(0,51,102,0.18)",
       }}
     >
-      <div className="max-w-7xl mx-auto px-4">
-        {/* Main Nav only — top bar removed */}
-        <div className="flex justify-between items-center py-4">
-          <div className="flex items-center gap-3">
+      <div className="w-full px-8 md:px-16">
+        {/* Main Nav only - top bar removed */}
+        <div className="flex justify-between items-center py-6">
+          <div className="flex items-center gap-6">
+            <div className="h-14 w-14 rounded-full border-2 border-white bg-white flex items-center justify-center shadow-sm">
+              <img
+                src="/goel-logo.svg"
+                alt="Goel & Associates logo"
+                className="h-9 w-9 object-contain"
+              />
+            </div>
             <div className="leading-tight">
-              <p className="font-bold text-lg tracking-tight uppercase text-white">
-                Goel &amp;
-              </p>
-              <p className="font-bold text-lg tracking-tight uppercase -mt-1 text-white">
-                Associates
+              <p className="site-brand-text font-normal text-xl tracking-widest uppercase text-white whitespace-nowrap">
+                Goel &amp; Associates
               </p>
             </div>
           </div>
 
-          <nav className="hidden md:flex items-center gap-8 text-[11px] font-bold uppercase tracking-widest">
-            <a href="#home" className="text-blue-400 transition-colors">
+          <nav className="hidden md:flex items-center gap-10 text-xs font-normal uppercase tracking-widest">
+            <a href="/" className="text-white transition-colors">
               Home
             </a>
             <a
-              href="#services"
-              className="text-white/80 hover:text-blue-400 transition-colors"
+              href="/services"
+              className="text-white hover:text-white/70 transition-colors"
             >
               Services
             </a>
             <a
-              href="#about"
-              className="text-white/80 hover:text-blue-400 transition-colors"
+              href="/#about"
+              className="text-white hover:text-white/70 transition-colors"
             >
               About
             </a>
             <a
-              href="#contact"
-              className="text-white/80 hover:text-blue-400 transition-colors"
+              href="/#contact"
+              className="text-white hover:text-white/70 transition-colors"
             >
               Contact
             </a>
@@ -92,122 +94,58 @@ function Hero() {
   return (
     <section
       id="home"
-      className="relative overflow-hidden"
-      style={{ background: "#07090f", minHeight: "100vh" }}
+      className="relative overflow-hidden bg-[#061423]"
+      style={{ minHeight: "100vh" }}
     >
-      {/* Blue radial glow on right side */}
-      <div
-        className="absolute right-0 top-0 h-full w-1/2 pointer-events-none"
-        style={{
-          background:
-            "radial-gradient(ellipse at 75% 60%, rgba(37,99,235,0.22) 0%, transparent 65%)",
-        }}
+      <img
+        src="/BGNEW.png"
+        alt=""
+        className="absolute inset-0 h-full w-full object-cover object-center"
       />
+      <div className="absolute inset-0 bg-gradient-to-r from-[#061423]/92 via-[#061423]/74 to-[#061423]/34" />
+      <div className="absolute inset-0 bg-gradient-to-t from-[#061423]/76 via-transparent to-[#061423]/20" />
 
-      {/* Thin blue accent line on far left */}
-      <div
-        className="absolute left-0 top-0 bottom-0 w-[3px] pointer-events-none"
-        style={{
-          background:
-            "linear-gradient(to bottom, transparent 10%, #3b82f6 50%, transparent 90%)",
-        }}
-      />
-
-      {/* Main grid: text left, portrait right */}
-      <div
-        className="max-w-7xl mx-auto px-8 w-full grid grid-cols-1 md:grid-cols-2"
-        style={{ minHeight: "100vh" }}
-      >
-        {/* LEFT — text content */}
-        <div className="flex flex-col justify-center pt-40 pb-20 relative z-20">
-          <span className="text-blue-500 font-bold uppercase tracking-[0.3em] text-[10px] mb-6 block">
-            Taxation Law • Dehradun, India
+      <div className="relative z-10 mx-auto flex min-h-screen max-w-7xl items-center px-8 pt-40 pb-24">
+        <div className="max-w-3xl">
+          <span className="text-[#d7b46a] font-black uppercase tracking-[0.32em] text-[11px] mb-6 block">
+            Tax Litigation - Advisory - Compliance
           </span>
           <h1
-            className="font-crimson-text text-white leading-[1.06] mb-8"
-            style={{ fontSize: "clamp(2.6rem, 5.5vw, 5.2rem)" }}
+            className="font-crimson-text text-white leading-[1.05] mb-8"
+            style={{ fontSize: "clamp(2.4rem, 4.3vw, 4.35rem)" }}
           >
-            Navigate India&apos;s
-            <br />
-            Complex Tax
-            <br />
-            <span className="text-blue-400">Landscape</span>
+            About Goel &amp; Associates
           </h1>
-          <p className="text-white/45 text-base mb-10 tracking-wide font-light max-w-sm leading-relaxed">
-            Specialized legal counsel in taxation law, helping individuals and
-            businesses optimize tax strategies while ensuring full compliance
-            with Indian taxation laws.
+          <p className="text-white/82 text-base mb-9 tracking-wide font-light max-w-3xl leading-relaxed">
+            Goel &amp; Associates is a Dehradun-based legal and taxation practice
+            focused on direct tax advisory, GST compliance, litigation support,
+            tribunal representation, and strategic counsel for businesses,
+            trusts, entrepreneurs, and individuals.
           </p>
+          <div className="grid sm:grid-cols-3 gap-4 max-w-3xl mb-10">
+            {[
+              { label: "Direct Tax", value: "Advisory" },
+              { label: "ITAT & Appeals", value: "Representation" },
+              { label: "GST & Audit", value: "Compliance" },
+            ].map((item) => (
+              <div key={item.label} className="border-l-4 border-[#d7b46a] bg-white/10 px-5 py-4 shadow-lg shadow-black/10 backdrop-blur-sm">
+                <p className="text-[10px] uppercase tracking-[0.22em] text-white/48 font-black mb-1">
+                  {item.label}
+                </p>
+                <p className="text-white text-sm font-black uppercase tracking-wider">
+                  {item.value}
+                </p>
+              </div>
+            ))}
+          </div>
           <div className="flex flex-wrap gap-4">
-            <button className="self-start bg-blue-600 hover:bg-blue-500 text-white px-8 py-4 flex items-center gap-3 font-bold uppercase tracking-widest text-[11px] transition-all shadow-xl shadow-blue-900/30">
+            <a href="#contact" className="self-start bg-white hover:bg-[#f4ead4] text-[#003366] px-8 py-4 flex items-center gap-3 font-bold uppercase tracking-widest text-[11px] transition-all shadow-xl shadow-black/20">
               Schedule Consultation <ChevronRight size={16} />
-            </button>
-            <button className="self-start border border-white/20 hover:border-blue-400 text-white/70 hover:text-blue-400 px-8 py-4 flex items-center gap-3 font-bold uppercase tracking-widest text-[11px] transition-all">
+            </a>
+            <a href="/services" className="self-start border border-white/55 hover:bg-white text-white hover:text-[#003366] px-8 py-4 flex items-center gap-3 font-bold uppercase tracking-widest text-[11px] transition-all">
               Learn About Services
-            </button>
+            </a>
           </div>
-
-          {/* Stats row */}
-          <div className="mt-16 flex flex-wrap gap-10 border-t border-white/10 pt-10">
-            <div>
-              <span className="text-4xl font-bold text-white block mb-1">
-                3+
-              </span>
-              <span className="text-[9px] text-blue-500 font-bold uppercase tracking-[0.22em]">
-                Years Experience
-              </span>
-            </div>
-            <div>
-              <span className="text-4xl font-bold text-white block mb-1">
-                100+
-              </span>
-              <span className="text-[9px] text-blue-500 font-bold uppercase tracking-[0.22em]">
-                Cases Handled
-              </span>
-            </div>
-            <div>
-              <span className="text-4xl font-bold text-white block mb-1">
-                ITAT
-              </span>
-              <span className="text-[9px] text-blue-500 font-bold uppercase tracking-[0.22em]">
-                Tribunal Representation
-              </span>
-            </div>
-          </div>
-        </div>
-
-        {/* RIGHT — lawyer portrait */}
-        <div
-          className="hidden md:flex items-end justify-center relative"
-          style={{ minHeight: "100vh" }}
-        >
-          <div
-            className="absolute bottom-0 left-1/2 -translate-x-1/2 pointer-events-none"
-            style={{
-              width: "320px",
-              height: "180px",
-              background:
-                "radial-gradient(ellipse, rgba(59,130,246,0.30) 0%, transparent 70%)",
-              filter: "blur(32px)",
-            }}
-          />
-          <img
-            src="https://raw.createusercontent.com/c7a90346-5a88-46b8-947c-9dc46e8bd833/"
-            alt="Advocate Pankaj Goel"
-            style={{
-              position: "relative",
-              zIndex: 10,
-              width: "100%",
-              height: "95vh",
-              objectFit: "contain",
-              objectPosition: "bottom center",
-              mixBlendMode: "screen",
-              maskImage:
-                "linear-gradient(to top, transparent 0%, black 8%, black 90%, transparent 100%)",
-              WebkitMaskImage:
-                "linear-gradient(to top, transparent 0%, black 8%, black 90%, transparent 100%)",
-            }}
-          />
         </div>
       </div>
     </section>
@@ -216,105 +154,110 @@ function Hero() {
 
 function About() {
   return (
-    <section id="about" className="py-32 bg-white relative overflow-hidden">
-      <div className="absolute top-0 right-0 w-1/3 h-full bg-slate-50 -z-0" />
-      <div className="max-w-7xl mx-auto px-4 grid md:grid-cols-2 gap-20 items-center relative z-10">
-        <div className="relative group">
-          <div className="absolute -top-6 -left-6 w-32 h-32 border-t-4 border-l-4 border-blue-600" />
-          <div className="bg-slate-200 aspect-[3/4] overflow-hidden shadow-2xl relative">
-            <img
-              src="https://www.goelandassociates.com/lovable-uploads/f1379bca-1c7a-4771-a731-fedbeef55821.png"
-              className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700"
-              alt="Advocate Pankaj Goel"
-            />
-          </div>
-          <div className="absolute -bottom-6 -right-6 w-32 h-32 border-b-4 border-r-4 border-blue-600" />
+    <section id="about" className="py-28 bg-white relative overflow-hidden">
+      <div className="absolute right-0 bottom-0 w-1/2 h-2/3 opacity-[0.06] pointer-events-none">
+        <img src="/court-hero.svg" alt="" className="h-full w-full object-cover object-left-bottom" />
+      </div>
 
-          {/* Credential badge */}
-          <div className="absolute -bottom-4 left-8 bg-[#0F172A] text-white px-6 py-4 shadow-xl z-20">
-            <p className="text-[9px] uppercase tracking-[0.25em] text-blue-400 font-bold mb-1">
-              Education
-            </p>
-            <p className="text-sm font-bold">B.Com, LLB, AIBE</p>
-            <p className="text-[9px] text-white/50 mt-1">
-              DAV (PG) College, Dehradun
-            </p>
-          </div>
-        </div>
-
-        <div className="pl-10">
-          <span className="text-blue-600 font-black tracking-[0.3em] uppercase text-xs block mb-6">
-            About the Advocate
-          </span>
-          <h2 className="text-6xl font-crimson-text mb-10 text-[#0F172A]">
-            Advocate Pankaj Goel
-          </h2>
-          <div className="space-y-6 text-slate-600 leading-[1.8] text-base font-light">
-            <p>
-              Advocate Pankaj Goel, the driving force behind{" "}
-              <span className="font-bold text-[#0F172A]">
-                Goel &amp; Associates
-              </span>
-              , is a young, passionate &amp; enthusiastic legal and tax
-              professional with a rich background in Indian taxation law. A law
-              graduate and esteemed member of the{" "}
-              <span className="font-bold text-[#0F172A]">
-                Uttarakhand High Court Bar
-              </span>
-              , he brings a sharp legal acumen and deep domain expertise to
-              every client interaction.
-            </p>
-            <p>
-              With years of hands-on experience, he has successfully represented
-              clients before a wide range of tax authorities, including the{" "}
-              <span className="font-bold text-[#0F172A]">
-                Income Tax Appellate Tribunal (ITAT)
-              </span>{" "}
-              and Commissioner of Income Tax (Appeals).
-            </p>
-            <p>
-              His clientele spans across corporates, MSMEs, charitable trusts,
-              startups, and high-net-worth individuals — each receiving tailored
-              advice grounded in professionalism, ethics, and results.
-            </p>
-          </div>
-
-          {/* Key credentials */}
-          <div className="mt-10 grid grid-cols-2 gap-4">
-            {[
-              { label: "Bar Council", value: "Uttarakhand" },
-              { label: "Languages", value: "English, Hindi" },
-              { label: "Specialisation", value: "Taxation Law" },
-              { label: "Court", value: "ITAT & HC Appeals" },
-            ].map((item, i) => (
-              <div
-                key={i}
-                className="bg-slate-50 px-4 py-3 border-l-2 border-blue-600"
-              >
-                <p className="text-[9px] uppercase tracking-widest text-slate-400 font-bold mb-1">
-                  {item.label}
-                </p>
-                <p className="text-sm font-bold text-[#0F172A]">{item.value}</p>
+      <div className="max-w-6xl mx-auto px-8 relative z-10">
+        <div className="grid md:grid-cols-[330px_1fr] gap-16 items-start">
+          <div className="w-full max-w-[330px] mx-auto md:mx-0 space-y-8">
+            <div className="shadow-lg">
+              <div className="bg-slate-100 aspect-[4/4.1] overflow-hidden">
+                <img
+                  src="/photom.png"
+                  className="h-full w-full object-cover object-top"
+                  alt="Advocate Pankaj Goel"
+                />
               </div>
-            ))}
+              <div className="bg-[#003366] text-white px-5 py-4">
+                <p className="text-2xl font-light tracking-wide leading-none">
+                  Pankaj Goel
+                </p>
+                <p className="text-xs font-semibold tracking-widest uppercase text-white/80 mt-2">
+                  Advocate & Taxation Counsel
+                </p>
+              </div>
+            </div>
+
+            <div className="shadow-lg">
+              <div className="bg-slate-100 aspect-[4/4.1] overflow-hidden">
+                <img
+                  src="/photon.jpg"
+                  className="h-full w-full object-cover object-top"
+                  alt="N. K Goel, IRS"
+                />
+              </div>
+              <div className="bg-[#003366] px-5 py-4 text-left text-white">
+                <p className="text-lg font-bold leading-none">N. K Goel, IRS</p>
+                <p className="mt-2 text-xs font-semibold uppercase tracking-widest text-white/80">
+                  Mentor &amp; Advisor
+                </p>
+              </div>
+            </div>
           </div>
 
-          <div className="mt-12">
-            <p className="font-crimson-text text-5xl text-[#0F172A] italic">
-              Pankaj Goel
-            </p>
-            <div className="w-24 h-[2px] bg-blue-600 mt-4" />
-            <p className="text-[10px] uppercase tracking-[0.25em] text-slate-400 font-bold mt-2">
-              Taxation Law Expert
-            </p>
+          <div className="max-w-2xl">
+            <h2 className="text-2xl md:text-3xl font-semibold mb-10 text-[#003366] uppercase tracking-wide">
+              Leadership
+            </h2>
+            <div className="mb-8 border-l-4 border-[#003366] bg-slate-50 px-5 py-4">
+              <p className="text-sm font-bold text-[#003366]">
+                Pankaj Goel (Founder and Advocate)
+              </p>
+            </div>
+            <div className="space-y-5 text-slate-700 leading-[1.75] text-base font-light">
+              <p>
+                Advocate Pankaj Goel, the driving force behind Goel &amp;
+                Associates, is a young, passionate &amp; enthusiastic legal and
+                tax professional with a rich background in Indian taxation law.
+                A law graduate and esteemed member of the Uttarakhand High
+                Court Bar, he brings a sharp legal acumen and deep domain
+                expertise to every client interaction.
+              </p>
+              <p>
+                With years of hands-on experience, Advocate Pankaj Goel has
+                successfully represented clients before a wide range of tax
+                authorities, including the Income Tax Appellate Tribunal (ITAT)
+                and Commissioner of Income Tax (Appeals). His ability to blend
+                legal insight with strategic tax planning has enabled countless
+                clients to navigate even the most intricate financial and
+                regulatory challenges with confidence.
+              </p>
+              <p>
+                His clientele spans across corporates, MSMEs, charitable trusts,
+                startups, and high-net-worth individuals--each receiving
+                tailored advice and dedicated representation grounded in
+                professionalism, ethics, and results.
+              </p>
+            </div>
+
+            <div className="mt-10 border-l-4 border-[#003366] bg-slate-50 px-6 py-6">
+              <p className="text-xs font-black tracking-[0.22em] uppercase text-slate-500 mb-4">
+                Mentor &amp; Advisor
+              </p>
+              <p className="text-slate-700 leading-[1.75] text-base font-light">
+                Shri N.K. Goel, IRS (Retd.), brings with him over 35 years of
+                distinguished service in the Income Tax Department. During his
+                illustrious career, he held key positions across diverse
+                domains, including search &amp; seizure, investigation, audit,
+                assessments, judicial matters, and departmental representative
+                before the Income Tax Appellate Tribunal. His extensive
+                experience and deep understanding of tax laws provide valuable
+                guidance and strategic insight to the firm. In addition to his
+                departmental experience, Shri Goel has also served as a visiting
+                faculty for training programs conducted by the Income Tax
+                Department.
+              </p>
+            </div>
+
           </div>
         </div>
       </div>
     </section>
   );
 }
-
-function LawAreas() {
+export function LawAreas() {
   const areas = [
     {
       icon: <FileText size={40} strokeWidth={1.5} />,
@@ -349,40 +292,33 @@ function LawAreas() {
   ];
 
   return (
-    <section id="services" className="py-32 bg-slate-50 relative">
-      <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-blue-600/20 to-transparent" />
-      <div className="max-w-7xl mx-auto px-4 text-center mb-24">
-        <span className="text-blue-600 font-black tracking-[0.3em] uppercase text-[10px] block mb-6">
-          Our Practice Areas
-        </span>
-        <h2 className="text-6xl font-crimson-text mb-8 text-[#0F172A]">
-          Comprehensive Tax Solutions
+    <section id="services" className="relative pt-16 pb-28">
+      <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-[#d7b46a]/55 to-transparent" />
+      <div className="mx-auto max-w-5xl px-6 pb-12 pt-8 text-center">
+        <h2 className="font-crimson-text text-white" style={{ fontSize: "clamp(2.8rem, 5vw, 4.8rem)" }}>
+          Practice Areas
         </h2>
-        <p className="text-slate-500 max-w-2xl mx-auto text-lg font-light">
-          Comprehensive legal solutions for all your taxation needs, delivered
-          with expertise and attention to detail.
-        </p>
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 grid md:grid-cols-3 gap-10">
+      <div className="max-w-6xl mx-auto px-6 grid md:grid-cols-3 gap-8">
         {areas.map((area, idx) => (
           <div
             key={idx}
-            className="bg-white p-12 border border-slate-100 hover:border-blue-600 transition-all group relative overflow-hidden shadow-sm hover:shadow-2xl hover:-translate-y-2 duration-500"
+            className="group relative overflow-hidden border border-white/12 bg-[#061423]/70 p-12 shadow-2xl shadow-black/20 backdrop-blur-sm transition-all duration-500 hover:-translate-y-2 hover:border-[#d7b46a]/70 hover:bg-[#071a2d]/82"
           >
-            <div className="absolute top-0 right-0 w-24 h-24 bg-blue-50 -mr-12 -mt-12 rounded-full group-hover:bg-blue-600 transition-colors duration-500" />
-            <div className="text-blue-600 mb-8 relative z-10 group-hover:text-white transition-colors duration-500">
+            <div className="absolute top-0 right-0 w-24 h-24 bg-white/8 -mr-12 -mt-12 rounded-full group-hover:bg-[#d7b46a]/30 transition-colors duration-500" />
+            <div className="text-[#d7b46a] mb-8 relative z-10 transition-colors duration-500">
               {area.icon}
             </div>
-            <h3 className="text-2xl font-bold mb-6 text-[#0F172A] relative z-10">
+            <h3 className="text-2xl font-bold mb-6 text-white relative z-10">
               {area.title}
             </h3>
-            <p className="text-slate-600 text-base leading-relaxed mb-8 relative z-10 font-light">
+            <p className="text-white/68 text-base leading-relaxed mb-8 relative z-10 font-light">
               {area.desc}
             </p>
             <a
-              href="#contact"
-              className="text-blue-600 hover:text-blue-700 font-black flex items-center gap-2 group/link relative z-10"
+              href="/#contact"
+              className="text-[#d7b46a] hover:text-white font-black flex items-center gap-2 group/link relative z-10"
             >
               <span className="text-[10px] uppercase tracking-widest">
                 Learn more
@@ -400,73 +336,51 @@ function LawAreas() {
 }
 
 function WhyChoose() {
+  const highlights = [
+    {
+      value: "3+",
+      title: "Years of Presence",
+      desc: "Backed by years of expertise in delivering reliable legal solutions.",
+    },
+    {
+      value: "200+",
+      title: "Satisfied Clients",
+      desc: "Proud to have earned the trust and confidence of our clients.",
+    },
+    {
+      value: "10+",
+      title: "Areas of Practice",
+      desc: "Comprehensive legal services across diverse practice areas to meet your needs.",
+    },
+  ];
+
   return (
-    <section className="py-32 bg-[#0F172A] text-white overflow-hidden relative">
-      <div className="absolute top-0 right-0 w-1/2 h-full z-0 opacity-40">
-        <div className="absolute inset-0 bg-gradient-to-l from-transparent to-[#0F172A]" />
+    <section className="relative overflow-hidden bg-[#061423] py-32 text-white">
+      <div className="absolute inset-0">
+        <img
+          src="/bgcontent.png"
+          alt=""
+          className="h-full w-full object-cover object-center"
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#061423]/90 via-[#061423]/70 to-[#061423]/36" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#061423]/84 via-transparent to-[#061423]/28" />
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 grid md:grid-cols-2 gap-20 items-center relative z-10">
-        <div>
-          <h2 className="text-6xl font-crimson-text mb-14 leading-tight">
-            Trusted Tax Expertise. <br />
-            <span className="text-blue-500 italic">Unwavering Commitment.</span>
-          </h2>
-          <ul className="space-y-8 mb-16">
-            {[
-              "Proven Track Record at ITAT & High Court",
-              "Personalised Tax Strategy for Every Client",
-              "Confidential & Discreet Legal Counsel",
-              "Serving Corporates, MSMEs, Trusts & HNIs",
-            ].map((item, idx) => (
-              <li
-                key={idx}
-                className="flex items-center gap-6 text-xl font-light"
-              >
-                <div className="w-8 h-8 rounded-full border-2 border-blue-600 flex items-center justify-center flex-shrink-0">
-                  <div className="w-3 h-3 bg-blue-600 rounded-full" />
-                </div>
-                {item}
-              </li>
-            ))}
-          </ul>
-          <a href="#contact">
-            <button className="bg-blue-600 hover:bg-blue-700 text-white px-12 py-5 flex items-center gap-3 font-bold uppercase tracking-widest text-xs transition-all shadow-xl shadow-blue-600/20">
-              SCHEDULE CONSULTATION <ChevronRight size={18} />
-            </button>
-          </a>
-        </div>
-
-        {/* Right side stats panel */}
-        <div className="grid grid-cols-2 gap-6">
-          {[
-            {
-              value: "3+",
-              label: "Years of Experience",
-              sub: "In Indian Taxation Law",
-            },
-            {
-              value: "100+",
-              label: "Cases Handled",
-              sub: "Successfully Resolved",
-            },
-            {
-              value: "ITAT",
-              label: "Tribunal Appearances",
-              sub: "Income Tax Appellate",
-            },
-            { value: "HC", label: "High Court", sub: "Uttarakhand Bar Member" },
-          ].map((stat, i) => (
+      <div className="relative z-10 mx-auto max-w-6xl px-8">
+        <div className="grid gap-8 md:grid-cols-3">
+          {highlights.map((item) => (
             <div
-              key={i}
-              className="border border-white/10 p-8 hover:border-blue-600 transition-colors"
+              key={item.title}
+              className="border border-white/12 bg-[#061423]/62 p-9 shadow-2xl shadow-black/20 backdrop-blur-sm transition-all duration-500 hover:-translate-y-1 hover:border-[#d7b46a]/70 hover:bg-[#071a2d]/78"
             >
-              <p className="text-4xl font-bold text-white mb-2">{stat.value}</p>
-              <p className="text-[10px] text-blue-500 font-bold uppercase tracking-[0.2em] mb-1">
-                {stat.label}
+              <p className="mb-3 font-crimson-text text-5xl font-bold text-[#d7b46a]">
+                {item.value}
               </p>
-              <p className="text-[10px] text-white/30 uppercase tracking-widest">
-                {stat.sub}
+              <h3 className="mb-3 text-xl font-semibold text-white">
+                {item.title}
+              </h3>
+              <p className="text-base font-light leading-relaxed text-white/72">
+                {item.desc}
               </p>
             </div>
           ))}
@@ -498,24 +412,24 @@ function SuccessStories() {
   return (
     <section className="py-32 bg-white overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 text-center mb-24">
-        <span className="text-blue-600 font-black tracking-[0.3em] uppercase text-[10px] block mb-6">
+        <span className="text-[#003366] font-black tracking-[0.3em] uppercase text-[10px] block mb-6">
           Testimonials
         </span>
-        <h2 className="text-6xl font-crimson-text mb-12 text-[#0F172A]">
+        <h2 className="text-6xl font-crimson-text mb-12 text-[#003366]">
           Client Success Stories
         </h2>
         <div className="flex justify-center items-center gap-4">
           <div className="flex gap-1">
             {[1, 2, 3, 4, 5].map((i) => (
               <div key={i} className="text-yellow-400 font-bold text-2xl">
-                ★
+                *
               </div>
             ))}
           </div>
           <div className="h-8 w-px bg-slate-200 mx-2" />
-          <span className="font-black uppercase text-[#0F172A] text-xs tracking-[0.2em] flex items-center gap-2">
+          <span className="font-black uppercase text-[#003366] text-xs tracking-[0.2em] flex items-center gap-2">
             Trusted Counsel{" "}
-            <span className="bg-[#0F172A] text-white px-2 py-0.5 rounded-sm">
+            <span className="bg-[#003366] text-white px-2 py-0.5 rounded-sm">
               INDIA
             </span>
           </span>
@@ -528,7 +442,7 @@ function SuccessStories() {
             key={idx}
             className="bg-slate-50 p-12 relative rounded-sm border border-slate-100 hover:bg-white hover:shadow-xl transition-all duration-300"
           >
-            <div className="text-blue-600 mb-8 opacity-20">
+            <div className="text-[#003366] mb-8 opacity-20">
               <svg
                 width="45"
                 height="36"
@@ -542,11 +456,11 @@ function SuccessStories() {
               &ldquo;{t.text}&rdquo;
             </p>
             <div className="flex items-center gap-5 mt-auto border-t border-slate-200 pt-8">
-              <div className="w-14 h-14 rounded-full bg-blue-100 overflow-hidden border-2 border-white shadow-sm flex items-center justify-center text-blue-600 font-bold text-xl">
+              <div className="w-14 h-14 rounded-full bg-[#e6eef5] overflow-hidden border-2 border-white shadow-sm flex items-center justify-center text-[#003366] font-bold text-xl">
                 {t.name[0]}
               </div>
               <div>
-                <p className="font-bold text-[#0F172A]">{t.name}</p>
+                <p className="font-bold text-[#003366]">{t.name}</p>
                 <p className="text-[10px] uppercase tracking-widest text-slate-400 font-bold">
                   {t.role}
                 </p>
@@ -557,7 +471,7 @@ function SuccessStories() {
       </div>
 
       <div className="flex justify-center gap-3 mt-20">
-        <div className="w-12 h-1 bg-blue-600 rounded-full" />
+        <div className="w-12 h-1 bg-[#003366] rounded-full" />
         <div className="w-3 h-1 bg-slate-200 rounded-full" />
         <div className="w-3 h-1 bg-slate-200 rounded-full" />
       </div>
@@ -570,7 +484,7 @@ function ConsultationForm() {
     <section
       id="contact"
       className="relative py-28 flex items-center overflow-hidden"
-      style={{ background: "#07090f" }}
+      style={{ background: "#003366" }}
     >
       {/* Full bleed background image with dark overlay */}
       <div className="absolute inset-0 z-0">
@@ -587,13 +501,13 @@ function ConsultationForm() {
               "linear-gradient(to right, rgba(7,9,15,0.72) 0%, rgba(7,9,15,0.48) 48%, rgba(7,9,15,0.28) 100%)",
           }}
         />
-        <div className="absolute inset-0 bg-blue-950/10" />
+        <div className="absolute inset-0 bg-[#003366]/10" />
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-8 w-full grid md:grid-cols-2 gap-16 items-start">
-        {/* LEFT — heading + contact details */}
+        {/* LEFT - heading + contact details */}
         <div className="text-white pt-4">
-          <p className="text-blue-500 font-bold uppercase tracking-[0.3em] text-[10px] mb-5">
+          <p className="text-[#003366] font-bold uppercase tracking-[0.3em] text-[10px] mb-5">
             Contact Us
           </p>
           <h2
@@ -610,7 +524,7 @@ function ConsultationForm() {
           <div className="space-y-8">
             {/* Phone */}
             <div className="flex items-start gap-5">
-              <div className="w-11 h-11 rounded-full border border-white/15 flex items-center justify-center text-blue-400 flex-shrink-0 mt-0.5">
+              <div className="w-11 h-11 rounded-full border border-white/15 flex items-center justify-center text-[#003366] flex-shrink-0 mt-0.5">
                 <Phone size={18} />
               </div>
               <div>
@@ -626,7 +540,7 @@ function ConsultationForm() {
 
             {/* Email */}
             <div className="flex items-start gap-5">
-              <div className="w-11 h-11 rounded-full border border-white/15 flex items-center justify-center text-blue-400 flex-shrink-0 mt-0.5">
+              <div className="w-11 h-11 rounded-full border border-white/15 flex items-center justify-center text-[#003366] flex-shrink-0 mt-0.5">
                 <Mail size={18} />
               </div>
               <div>
@@ -645,9 +559,9 @@ function ConsultationForm() {
           </div>
         </div>
 
-        {/* RIGHT — white form card */}
+        {/* RIGHT - white form card */}
         <div className="bg-white p-10 shadow-2xl">
-          <h3 className="font-crimson-text text-2xl text-[#0F172A] mb-1">
+          <h3 className="font-crimson-text text-2xl text-[#003366] mb-1">
             Send us a Message
           </h3>
           <p className="text-slate-400 text-sm mb-7 font-light">
@@ -660,7 +574,7 @@ function ConsultationForm() {
               </label>
               <input
                 type="text"
-                className="w-full bg-slate-50 border-b-2 border-slate-200 px-3 py-3 focus:outline-none focus:border-blue-600 transition-colors text-slate-900 text-sm"
+                className="w-full bg-slate-50 border-b-2 border-slate-200 px-3 py-3 focus:outline-none focus:border-[#003366] transition-colors text-slate-900 text-sm"
                 placeholder="Your full name"
               />
             </div>
@@ -671,7 +585,7 @@ function ConsultationForm() {
                 </label>
                 <input
                   type="email"
-                  className="w-full bg-slate-50 border-b-2 border-slate-200 px-3 py-3 focus:outline-none focus:border-blue-600 transition-colors text-slate-900 text-sm"
+                  className="w-full bg-slate-50 border-b-2 border-slate-200 px-3 py-3 focus:outline-none focus:border-[#003366] transition-colors text-slate-900 text-sm"
                   placeholder="you@email.com"
                 />
               </div>
@@ -681,7 +595,7 @@ function ConsultationForm() {
                 </label>
                 <input
                   type="text"
-                  className="w-full bg-slate-50 border-b-2 border-slate-200 px-3 py-3 focus:outline-none focus:border-blue-600 transition-colors text-slate-900 text-sm"
+                  className="w-full bg-slate-50 border-b-2 border-slate-200 px-3 py-3 focus:outline-none focus:border-[#003366] transition-colors text-slate-900 text-sm"
                   placeholder="+91 ..."
                 />
               </div>
@@ -692,7 +606,7 @@ function ConsultationForm() {
               </label>
               <input
                 type="text"
-                className="w-full bg-slate-50 border-b-2 border-slate-200 px-3 py-3 focus:outline-none focus:border-blue-600 transition-colors text-slate-900 text-sm"
+                className="w-full bg-slate-50 border-b-2 border-slate-200 px-3 py-3 focus:outline-none focus:border-[#003366] transition-colors text-slate-900 text-sm"
                 placeholder="e.g. GST Compliance, Tax Audit..."
               />
             </div>
@@ -702,11 +616,11 @@ function ConsultationForm() {
               </label>
               <textarea
                 rows={4}
-                className="w-full bg-slate-50 border-b-2 border-slate-200 px-3 py-3 focus:outline-none focus:border-blue-600 transition-colors resize-none text-slate-900 text-sm"
+                className="w-full bg-slate-50 border-b-2 border-slate-200 px-3 py-3 focus:outline-none focus:border-[#003366] transition-colors resize-none text-slate-900 text-sm"
                 placeholder="Briefly describe your tax matter..."
               />
             </div>
-            <button className="w-full bg-blue-600 hover:bg-blue-700 text-white py-4 font-black uppercase tracking-[0.2em] text-xs flex items-center justify-center gap-3 transition-all shadow-lg shadow-blue-600/20">
+            <button className="w-full bg-[#003366] hover:bg-[#00284f] text-white py-4 font-black uppercase tracking-[0.2em] text-xs flex items-center justify-center gap-3 transition-all shadow-lg shadow-[#003366]/20">
               Send Message <ChevronRight size={16} />
             </button>
           </form>
@@ -716,10 +630,36 @@ function ConsultationForm() {
   );
 }
 
-function Footer() {
+function MapSection() {
+  return (
+    <section className="bg-white border-t border-slate-200">
+      <div className="max-w-7xl mx-auto px-8 py-12">
+        <div className="mb-6">
+          <p className="text-[#003366] font-black uppercase tracking-[0.3em] text-[10px] mb-2">
+            Location
+          </p>
+          <h2 className="font-crimson-text text-3xl text-[#003366]">
+            Visit Goel &amp; Associates
+          </h2>
+        </div>
+        <div className="h-[320px] overflow-hidden border border-slate-200 shadow-sm">
+          <iframe
+            title="Goel & Associates location map"
+            src="https://www.google.com/maps?q=Lane%20No%201%2C%2021%2F17%2C%20Teg%20Bahadur%20Rd%2C%20Dalanwala%2C%20Dehradun%20248001&output=embed"
+            className="h-full w-full"
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+          />
+        </div>
+      </div>
+    </section>
+  );
+}
+
+export function Footer() {
   return (
     <footer
-      className="relative pt-24 pb-12 border-t border-slate-200 overflow-hidden"
+      className="relative pt-12 pb-8 border-t border-slate-200 overflow-hidden"
       style={{ background: "#f8fafc" }}
     >
       {/* Full bleed background image */}
@@ -732,31 +672,29 @@ function Footer() {
         />
       </div>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-6">
+      <div className="relative z-10 max-w-6xl mx-auto px-6">
         {/* Big brand name */}
-        <div className="mb-14">
+        <div className="mb-8">
           <h2
             style={{
               fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif",
               fontWeight: 900,
-              fontSize: "clamp(3rem, 8vw, 7rem)",
-              letterSpacing: "-0.02em",
+              fontSize: "clamp(2rem, 4.8vw, 4rem)",
+              letterSpacing: "0",
               lineHeight: 1,
-              color: "#0F172A",
+              color: "#003366",
             }}
           >
-            GOEL &amp;
-            <br />
-            ASSOCIATES
+            GOEL &amp; ASSOCIATES
           </h2>
-          <p className="text-slate-400 text-sm font-light mt-4 tracking-widest uppercase">
-            Taxation Law Experts · Dehradun, India
+          <p className="text-slate-400 text-xs font-light mt-3 tracking-widest uppercase">
+            Taxation Law Experts - Dehradun, India
           </p>
-          <div className="w-16 h-[3px] bg-blue-600 mt-5" />
+          <div className="w-16 h-[3px] bg-[#003366] mt-4" />
         </div>
 
         {/* 4-col grid */}
-        <div className="grid md:grid-cols-4 gap-16 mb-20">
+        <div className="grid md:grid-cols-4 gap-10 mb-10">
           {/* Brand description */}
           <div>
             <p className="text-sm text-slate-500 font-light leading-relaxed">
@@ -766,17 +704,19 @@ function Footer() {
           </div>
 
           <div>
-            <h4 className="font-black uppercase tracking-[0.3em] text-[10px] mb-8 text-slate-400">
+            <h4 className="font-black uppercase tracking-[0.3em] text-[10px] mb-5 text-slate-400">
               Quick Links
             </h4>
-            <ul className="space-y-4 text-xs font-bold uppercase tracking-widest text-slate-500">
-              {["Home", "Services", "About", "Contact"].map((link) => (
-                <li key={link}>
-                  <a
-                    href={`#${link.toLowerCase()}`}
-                    className="hover:text-blue-600 transition-colors"
-                  >
-                    {link}
+            <ul className="space-y-3 text-xs font-bold uppercase tracking-widest text-slate-500">
+              {[
+                { label: "Home", href: "/" },
+                { label: "Services", href: "/services" },
+                { label: "About", href: "/#about" },
+                { label: "Contact", href: "/#contact" },
+              ].map((link) => (
+                <li key={link.label}>
+                  <a href={link.href} className="hover:text-[#003366] transition-colors">
+                    {link.label}
                   </a>
                 </li>
               ))}
@@ -784,10 +724,10 @@ function Footer() {
           </div>
 
           <div>
-            <h4 className="font-black uppercase tracking-[0.3em] text-[10px] mb-8 text-slate-400">
+            <h4 className="font-black uppercase tracking-[0.3em] text-[10px] mb-5 text-slate-400">
               Services
             </h4>
-            <ul className="space-y-4 text-xs font-bold uppercase tracking-widest text-slate-500">
+            <ul className="space-y-3 text-xs font-bold uppercase tracking-widest text-slate-500">
               {[
                 "Direct Tax Advisory",
                 "GST Compliance",
@@ -798,8 +738,8 @@ function Footer() {
               ].map((s) => (
                 <li key={s}>
                   <a
-                    href="#services"
-                    className="hover:text-blue-600 transition-colors"
+                    href="/services"
+                    className="hover:text-[#003366] transition-colors"
                   >
                     {s}
                   </a>
@@ -809,41 +749,41 @@ function Footer() {
           </div>
 
           <div>
-            <h4 className="font-black uppercase tracking-[0.3em] text-[10px] mb-8 text-slate-400">
+            <h4 className="font-black uppercase tracking-[0.3em] text-[10px] mb-5 text-slate-400">
               Contact Info
             </h4>
-            <ul className="space-y-5 text-sm text-slate-600">
+            <ul className="space-y-3 text-sm text-slate-600">
               <li className="flex items-start gap-3">
                 <MapPin
                   size={15}
-                  className="text-blue-600 flex-shrink-0 mt-0.5"
+                  className="text-[#003366] flex-shrink-0 mt-0.5"
                 />
                 <span className="font-light leading-relaxed">
-                  No.1, 21/17, Teg Bahadur Rd,
+                  Lane No 1, 21/17, Teg Bahadur Rd,
                   <br />
-                  Dalanwala, Dehradun — 248001
+                  Dalanwala, Dehradun - 248001
                 </span>
               </li>
               <li className="flex items-start gap-3">
                 <Phone
                   size={15}
-                  className="text-blue-600 flex-shrink-0 mt-0.5"
+                  className="text-[#003366] flex-shrink-0 mt-0.5"
                 />
                 <div>
-                  <p className="font-semibold text-[#0F172A]">+91-8126234371</p>
-                  <p className="font-semibold text-[#0F172A]">+91-8279692661</p>
+                  <p className="font-semibold text-[#003366]">+91-8126234371</p>
+                  <p className="font-semibold text-[#003366]">+91-8279692661</p>
                 </div>
               </li>
               <li className="flex items-start gap-3">
                 <Mail
                   size={15}
-                  className="text-blue-600 flex-shrink-0 mt-0.5"
+                  className="text-[#003366] flex-shrink-0 mt-0.5"
                 />
                 <div>
-                  <p className="text-xs font-semibold text-[#0F172A]">
+                  <p className="text-xs font-semibold text-[#003366]">
                     goel.taxpert@gmail.com
                   </p>
-                  <p className="text-xs font-semibold text-[#0F172A]">
+                  <p className="text-xs font-semibold text-[#003366]">
                     pankaj@goelandassociates.com
                   </p>
                 </div>
@@ -853,18 +793,18 @@ function Footer() {
         </div>
 
         {/* Bottom bar */}
-        <div className="pt-10 border-t border-slate-200 flex flex-col md:flex-row justify-between items-center gap-6">
+        <div className="pt-6 border-t border-slate-200 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-[10px] text-slate-400 font-bold uppercase tracking-[0.3em]">
-            © 2026 Goel &amp; Associates. All rights reserved.
+            (c) 2026 Goel &amp; Associates. All rights reserved.
           </p>
           <div className="flex gap-8 text-[10px] font-bold uppercase tracking-[0.2em] text-slate-400">
-            <a href="#" className="hover:text-blue-600 transition-colors">
+            <a href="#" className="hover:text-[#003366] transition-colors">
               Privacy Policy
             </a>
-            <a href="#" className="hover:text-blue-600 transition-colors">
+            <a href="#" className="hover:text-[#003366] transition-colors">
               Terms of Service
             </a>
-            <a href="#" className="hover:text-blue-600 transition-colors">
+            <a href="#" className="hover:text-[#003366] transition-colors">
               Legal Disclaimer
             </a>
           </div>

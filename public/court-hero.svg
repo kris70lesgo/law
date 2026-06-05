@@ -1,0 +1,53 @@
+<svg width="1800" height="720" viewBox="0 0 1800 720" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1800" height="720" fill="#F8FAFC"/>
+  <g opacity="0.9" stroke="#3F3F46" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M70 650H1730"/>
+    <path d="M210 535H1590V650H210V535Z" fill="#E5E7EB"/>
+    <path d="M310 435H1490V535H310V435Z" fill="#F1F5F9"/>
+    <path d="M395 325H1405V435H395V325Z" fill="#E5E7EB"/>
+    <path d="M660 245H1140V325H660V245Z" fill="#F8FAFC"/>
+    <path d="M735 125C770 55 1030 55 1065 125L1090 245H710L735 125Z" fill="#E5E7EB"/>
+    <path d="M720 125H1080"/>
+    <path d="M745 155H1055"/>
+    <path d="M765 185H1035"/>
+    <path d="M900 85V45"/>
+    <path d="M860 45H940"/>
+    <path d="M895 245V325"/>
+    <path d="M905 245V325"/>
+    <path d="M855 430V650"/>
+    <path d="M945 430V650"/>
+    <path d="M540 430V650"/>
+    <path d="M630 430V650"/>
+    <path d="M1170 430V650"/>
+    <path d="M1260 430V650"/>
+    <path d="M450 430H1350"/>
+    <path d="M480 650V470"/>
+    <path d="M570 650V470"/>
+    <path d="M660 650V470"/>
+    <path d="M750 650V470"/>
+    <path d="M840 650V470"/>
+    <path d="M930 650V470"/>
+    <path d="M1020 650V470"/>
+    <path d="M1110 650V470"/>
+    <path d="M1200 650V470"/>
+    <path d="M1290 650V470"/>
+    <path d="M445 470H1355"/>
+    <path d="M805 650V570C805 540 835 515 900 515C965 515 995 540 995 570V650"/>
+    <path d="M860 565H940"/>
+    <path d="M805 650H995"/>
+    <path d="M720 380L900 330L1080 380"/>
+    <path d="M700 395H1100"/>
+    <path d="M250 535L310 435"/>
+    <path d="M1550 535L1490 435"/>
+    <path d="M170 650C230 610 300 610 360 650"/>
+    <path d="M1440 650C1500 610 1570 610 1630 650"/>
+    <path d="M230 605C250 570 310 570 330 605"/>
+    <path d="M1470 605C1490 570 1550 570 1570 605"/>
+  </g>
+  <g opacity="0.35" stroke="#64748B" stroke-width="2" stroke-linecap="round">
+    <path d="M210 245C260 200 315 200 365 245"/>
+    <path d="M1325 245C1375 200 1430 200 1480 245"/>
+    <path d="M1540 300C1570 270 1605 270 1635 300"/>
+    <path d="M130 315C160 285 195 285 225 315"/>
+  </g>
+</svg>
