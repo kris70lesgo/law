@@ -126,7 +126,7 @@ function Hero() {
             {[
               { label: "Direct Tax", value: "Advisory" },
               { label: "ITAT & Appeals", value: "Representation" },
-              { label: "GST & Audit", value: "Compliance" },
+              { label: "GST & Audit", value: "Compliance & Litigation" },
             ].map((item) => (
               <div key={item.label} className="border-l-4 border-[#d7b46a] bg-white/10 px-5 py-4 shadow-lg shadow-black/10 backdrop-blur-sm">
                 <p className="text-[10px] uppercase tracking-[0.22em] text-white/48 font-black mb-1">
@@ -191,7 +191,7 @@ function About() {
               <div className="bg-[#003366] px-5 py-4 text-left text-white">
                 <p className="text-lg font-bold leading-none">N. K Goel, IRS</p>
                 <p className="mt-2 text-xs font-semibold uppercase tracking-widest text-white/80">
-                  Mentor &amp; Advisor
+                  Mentor &amp; Strategic Advisor
                 </p>
               </div>
             </div>
