@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 import {
   Phone,
   Mail,
@@ -58,27 +59,27 @@ export function Header() {
           </div>
 
           <nav className="hidden md:flex items-center gap-10 text-xs font-normal uppercase tracking-widest">
-            <a href="/" className="text-white transition-colors">
+            <Link href="/" className="text-white transition-colors">
               Home
-            </a>
-            <a
+            </Link>
+            <Link
               href="/services"
               className="text-white hover:text-white/70 transition-colors"
             >
               Services
-            </a>
-            <a
+            </Link>
+            <Link
               href="/#about"
               className="text-white hover:text-white/70 transition-colors"
             >
               About
-            </a>
-            <a
+            </Link>
+            <Link
               href="/#contact"
               className="text-white hover:text-white/70 transition-colors"
             >
               Contact
-            </a>
+            </Link>
           </nav>
 
           <button className="md:hidden p-2 hover:bg-white/10 rounded-full transition-colors text-white">
@@ -316,7 +317,7 @@ export function LawAreas() {
             <p className="text-white/68 text-base leading-relaxed mb-8 relative z-10 font-light">
               {area.desc}
             </p>
-            <a
+            <Link
               href="/#contact"
               className="text-[#d7b46a] hover:text-white font-black flex items-center gap-2 group/link relative z-10"
             >
@@ -327,7 +328,7 @@ export function LawAreas() {
                 size={16}
                 className="group-hover/link:translate-x-1 transition-transform"
               />
-            </a>
+            </Link>
           </div>
         ))}
       </div>

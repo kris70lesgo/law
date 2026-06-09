@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Carter_One, DM_Serif_Display, EB_Garamond, Merriweather } from "next/font/google";
+import DisclaimerModal from "./components/DisclaimerModal";
 import "./globals.css";
 
 const ebGaramond = EB_Garamond({
@@ -40,7 +41,10 @@ export default function RootLayout({
       lang="en"
       className={`${ebGaramond.variable} ${merriweather.variable} ${dmSerifDisplay.variable} ${carterOne.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="min-h-full flex flex-col">
+        <DisclaimerModal />
+        {children}
+      </body>
     </html>
   );
 }
