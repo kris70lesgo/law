@@ -1,5 +1,6 @@
 import React from "react";
 import Link from "next/link";
+import ContactForm from "./components/ContactForm";
 import {
   Phone,
   Mail,
@@ -568,63 +569,7 @@ function ConsultationForm() {
           <p className="text-slate-400 text-sm mb-7 font-light">
             Fill out the form below and we will get back to you shortly.
           </p>
-          <form className="space-y-5">
-            <div>
-              <label className="block text-[10px] uppercase tracking-[0.2em] font-black mb-2 text-slate-400">
-                Full Name *
-              </label>
-              <input
-                type="text"
-                className="w-full bg-slate-50 border-b-2 border-slate-200 px-3 py-3 focus:outline-none focus:border-[#003366] transition-colors text-slate-900 text-sm"
-                placeholder="Your full name"
-              />
-            </div>
-            <div className="grid grid-cols-2 gap-5">
-              <div>
-                <label className="block text-[10px] uppercase tracking-[0.2em] font-black mb-2 text-slate-400">
-                  Email *
-                </label>
-                <input
-                  type="email"
-                  className="w-full bg-slate-50 border-b-2 border-slate-200 px-3 py-3 focus:outline-none focus:border-[#003366] transition-colors text-slate-900 text-sm"
-                  placeholder="you@email.com"
-                />
-              </div>
-              <div>
-                <label className="block text-[10px] uppercase tracking-[0.2em] font-black mb-2 text-slate-400">
-                  Phone
-                </label>
-                <input
-                  type="text"
-                  className="w-full bg-slate-50 border-b-2 border-slate-200 px-3 py-3 focus:outline-none focus:border-[#003366] transition-colors text-slate-900 text-sm"
-                  placeholder="+91 ..."
-                />
-              </div>
-            </div>
-            <div>
-              <label className="block text-[10px] uppercase tracking-[0.2em] font-black mb-2 text-slate-400">
-                Subject *
-              </label>
-              <input
-                type="text"
-                className="w-full bg-slate-50 border-b-2 border-slate-200 px-3 py-3 focus:outline-none focus:border-[#003366] transition-colors text-slate-900 text-sm"
-                placeholder="e.g. GST Compliance, Tax Audit..."
-              />
-            </div>
-            <div>
-              <label className="block text-[10px] uppercase tracking-[0.2em] font-black mb-2 text-slate-400">
-                Message *
-              </label>
-              <textarea
-                rows={4}
-                className="w-full bg-slate-50 border-b-2 border-slate-200 px-3 py-3 focus:outline-none focus:border-[#003366] transition-colors resize-none text-slate-900 text-sm"
-                placeholder="Briefly describe your tax matter..."
-              />
-            </div>
-            <button className="w-full bg-[#003366] hover:bg-[#00284f] text-white py-4 font-black uppercase tracking-[0.2em] text-xs flex items-center justify-center gap-3 transition-all shadow-lg shadow-[#003366]/20">
-              Send Message <ChevronRight size={16} />
-            </button>
-          </form>
+          <ContactForm />
         </div>
       </div>
     </section>
