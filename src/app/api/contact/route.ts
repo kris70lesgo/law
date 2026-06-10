@@ -86,6 +86,8 @@ export async function POST(request: Request) {
   });
 
   if (error) {
+    console.error("Resend contact form error:", error);
+
     return NextResponse.json(
       { error: "Unable to send message right now." },
       { status: 500 }
